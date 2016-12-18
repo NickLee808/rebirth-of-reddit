@@ -8,7 +8,7 @@ function reqListener () {
     link.setAttribute('id', `link${i}`);
     pic.setAttribute('src', objParse.data.children[i].data.url);
     document.getElementById('gallery').appendChild(link);
-    document.getElementById(`link${i}`).appendChild(pic);
+    link.appendChild(pic);
   }
 }
 
