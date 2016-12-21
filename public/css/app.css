@@ -1,2 +1,13 @@
-body {
-  background-image: url(/assets/bg.jpg); }
+html {
+  background-image: url(/assets/bg.jpg);
+  background-repeat: repeat;
+  background-color: blue; }
+  @media screen and (min-width: 780px) {
+    html {
+      background-color: red; } }
+  html div span {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; }
