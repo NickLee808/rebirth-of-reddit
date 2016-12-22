@@ -4,15 +4,17 @@ var subName = document.getElementById('userInput');
 document.getElementById('submit').addEventListener('click', subLoader);
 
 function subLoader () {
+  document.getElementById('gallery').innerHTML = '';
+
   let subreddit = subName.value;
   if (subreddit === 'random'){
     alert('Fuck you, I don\'t know how to do that shit yet');
   }
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener('load', linkLoader);
-oReq.open('GET', `https://www.reddit.com/r/${subreddit}.json`);
-oReq.send();
+  var oReq = new XMLHttpRequest();
+  oReq.addEventListener('load', linkLoader);
+  oReq.open('GET', `https://www.reddit.com/r/${subreddit}.json`);
+  oReq.send();
 
 }
 

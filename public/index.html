@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width" />
     <title>Rebirth of Reddit</title>
     <link rel="stylesheet" href="/css/app.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Oswald" rel="stylesheet">
   </head>
   <body>
     
-    <header>
       <div id ='subInput'>
         <label for="titleId">r/</label>
-        <input id="userInput" type="text" placeholder="subreddit">
-        <button id="submit">submit</button>
+        <input id="userInput" type="text" placeholder="subreddit" onkeydown = "if (event.keyCode == 13)
+          document.getElementById('submit').click()">
+        <button id="submit" onclick="subLoader();">submit</button>
       </div>
-    </header>
 
     <div id='gallery'></div>
 

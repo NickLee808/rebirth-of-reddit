@@ -1,24 +1,33 @@
-html {
-  @media screen and (min-width: 780px){
-    background-image: none;
-    background-color: blue;
-    }
-  background-image: url(/assets/bg.jpg);
-  background-repeat: repeat;
-  body {
-    
+//font-family: 'Oswald', sans-serif;
+//font-family: 'Lato', sans-serif;
 
-    #subInput{
+html {
+  background-image: url(/assets/bg.jpg);
+  background-size: cover;
+  
+
+  body {
+
+    #subInput {
+      @media screen and (min-width: 780px){
+        background-color: red;
+      }
+      color: white;
+      top: 0;
+      left: 0;
+      width: 100%;
+      position: fixed;
       display: flex;
       flex-flow: row wrap;
-      background-color: white;
-      margin: 1rem 0.5rem 0.5rem 0.5rem;
+      background-color: blue;
       justify-content: center;
       padding: 1rem;
     }
-    div {
+
+    #gallery {
       display: flex;
       flex-flow: row wrap;
+      margin-top: 3.8rem;
       span {
         background-color: white;
         margin: 0.5rem;
