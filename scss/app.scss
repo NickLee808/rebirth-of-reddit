@@ -1,17 +1,16 @@
 html {
   @media screen and (min-width: 780px){
-    background-color: red;
+    background-image: none;
+    background-color: blue;
     }
   background-image: url(/assets/bg.jpg);
   background-repeat: repeat;
-  background-color: blue;
   body {
     
   }
   div {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center; 
     span {
       background-color: white;
       margin: 0.5rem;

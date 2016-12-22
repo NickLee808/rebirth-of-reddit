@@ -1,14 +1,13 @@
 html {
   background-image: url(/assets/bg.jpg);
-  background-repeat: repeat;
-  background-color: blue; }
+  background-repeat: repeat; }
   @media screen and (min-width: 780px) {
     html {
-      background-color: red; } }
+      background-image: none;
+      background-color: blue; } }
   html div {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center; }
+    flex-flow: row wrap; }
     html div span {
       background-color: white;
       margin: 0.5rem;
