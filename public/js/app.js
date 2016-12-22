@@ -16,6 +16,9 @@ function linkLoader () {
       if (arrayOfPosts[i].data.url.indexOf('youtu') > -1){
         let vid = document.createElement('iframe');
         vid.setAttribute('src', youTuber(arrayOfPosts[i].data.url));
+        vid.setAttribute('frameborder', 0);
+        vid.setAttribute('width', '100%');
+        vid.setAttribute('height', '100%');
         link.appendChild(vid);
       }else{
         let pic = document.createElement('img');
