@@ -5,7 +5,7 @@ html {
     html {
       background-image: none;
       background-color: blue; } }
-  html body #subreddit {
+  html body #subInput {
     display: flex;
     flex-flow: row wrap;
     background-color: white;
