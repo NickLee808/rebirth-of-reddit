@@ -7,18 +7,27 @@ html {
   background-repeat: repeat;
   body {
     
-  }
-  div {
-    display: flex;
-    flex-flow: row wrap;
-    span {
+
+    #subreddit{
+      display: flex;
+      flex-flow: row wrap;
       background-color: white;
-      margin: 0.5rem;
-      width: 100%;
-      align-items: center;
+      margin: 1rem 0.5rem 0.5rem 0.5rem;
+      justify-content: center;
       padding: 1rem;
-      img {
-        width: 100%
+    }
+    div {
+      display: flex;
+      flex-flow: row wrap;
+      span {
+        background-color: white;
+        margin: 0.5rem;
+        width: 100%;
+        align-items: center;
+        padding: 1rem;
+        img {
+          width: 100%
+        }
       }
     }
   }

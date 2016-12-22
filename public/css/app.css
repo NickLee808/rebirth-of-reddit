@@ -5,14 +5,21 @@ html {
     html {
       background-image: none;
       background-color: blue; } }
-  html div {
+  html body #subreddit {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: white;
+    margin: 1rem 0.5rem 0.5rem 0.5rem;
+    justify-content: center;
+    padding: 1rem; }
+  html body div {
     display: flex;
     flex-flow: row wrap; }
-    html div span {
+    html body div span {
       background-color: white;
       margin: 0.5rem;
       width: 100%;
       align-items: center;
       padding: 1rem; }
-      html div span img {
+      html body div span img {
         width: 100%; }
