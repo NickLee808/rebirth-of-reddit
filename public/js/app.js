@@ -22,6 +22,8 @@ function linkLoader () {
   let objParse = JSON.parse(this.responseText);
   let arrayOfPosts = objParse.data.children;
   for (let i = 0; i < arrayOfPosts.length; i++) {
+    let title= arrayOfPosts[i].data.title;
+    console.log(title);
     if (formatAuthenticator(arrayOfPosts[i].data.url)) {
       let link = document.createElement('span');
       link.setAttribute('id', `link${i}`);
@@ -62,6 +64,6 @@ function formatAuthenticator (url) {
   return false;
 }
 
-function linkGenerator (){
+function titleGenerator (){
 
 }
