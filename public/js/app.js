@@ -94,7 +94,10 @@ function subtitleGenerator (link, author, comments, upvotes) {
   authorLink.innerHTML = `${author}`;
   subtitle.appendChild(authorLink);
   subtitle.appendChild(document.createElement('p'));
-
-/*subtitleP.innerHTML = 'by ' + authorLink + ' • ' + `${comments}` + ' comments' + ' • ' + `${upvotes}` + ' upvotes';
-*/  return link.appendChild(subtitle);
+  subtitle.innerHTML = `by ${authorLink.outerHTML} &nbsp; • &nbsp; ${upvotes} upvotes &nbsp; • &nbsp; ${comments} comments`;
+  link.appendChild(subtitle);
 }
+
+
+
+// https://www.reddit.com/r/gifs/?after=t3_
