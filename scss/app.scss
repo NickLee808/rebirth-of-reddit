@@ -4,39 +4,72 @@
 html {
   background-image: url(/assets/bg.jpg);
   background-size: cover;
-
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline
+  }
   body {
-
-    #subInput {
-      @media screen and (min-width: 780px){
-        background-color: red;
-      }
-      color: white;
-      top: 0;
-      left: 0;
-      width: 100%;
-      position: fixed;
+    margin: 0;
+    #header {
+      background: url('/assets/logo.svg') no-repeat;
+      background-color: white;
+      height: 4rem;
+      background-position: center;
       display: flex;
       flex-flow: row wrap;
-      background-color: blue;
-      justify-content: center;
-      padding: 1rem;
+    }
+
+    #navbar {
+      background-color: #3A3A3C;
+      height: 2.5rem;
+      box-shadow: 0.2rem 0.2rem 15px black;
     }
 
     #gallery {
       display: flex;
       flex-flow: row wrap;
-      margin-top: 3.8rem;
+      margin: 0.5rem 0.5rem 3.8rem 0.5rem;
+
       span {
         background-color: white;
         margin: 0.5rem;
         width: 100%;
         align-items: center;
         padding: 1rem;
+        box-shadow: 0.2rem 0.2rem 15px black;
         img {
-          width: 100%
+          width: 100%;
+          box-shadow: 0.2rem 0.2rem 15px black;
+        }
+        text-align: center;
+        #title {
+          font-family: 'Oswald', sans-serif;
+          font-size: 1.2rem;
+        }
+        #subtitle {
+          font-family: 'Lato', sans-serif;
+          font-size: 0.8rem;
         }
       }
+    }
+
+    #subInput {
+      @media screen and (min-width: 780px){
+        background-color: red;
+      }
+      color: white;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      position: fixed;
+      display: flex;
+      flex-flow: row wrap;
+      background-color: #3A3A3C;
+      justify-content: center;
+      padding: 1rem;
     }
   }
 }

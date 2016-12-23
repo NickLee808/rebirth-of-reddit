@@ -1,29 +1,56 @@
 html {
   background-image: url(/assets/bg.jpg);
   background-size: cover; }
-  html body #subInput {
-    color: white;
-    top: 0;
-    left: 0;
-    width: 100%;
-    position: fixed;
-    display: flex;
-    flex-flow: row wrap;
-    background-color: blue;
-    justify-content: center;
-    padding: 1rem; }
-    @media screen and (min-width: 780px) {
-      html body #subInput {
-        background-color: red; } }
-  html body #gallery {
-    display: flex;
-    flex-flow: row wrap;
-    margin-top: 3.8rem; }
-    html body #gallery span {
+  html a {
+    color: black;
+    text-decoration: none; }
+  html a:hover {
+    text-decoration: underline; }
+  html body {
+    margin: 0; }
+    html body #header {
+      background: url("/assets/logo.svg") no-repeat;
       background-color: white;
-      margin: 0.5rem;
+      height: 4rem;
+      background-position: center;
+      display: flex;
+      flex-flow: row wrap; }
+    html body #navbar {
+      background-color: #3A3A3C;
+      height: 2.5rem;
+      box-shadow: 0.2rem 0.2rem 15px black; }
+    html body #gallery {
+      display: flex;
+      flex-flow: row wrap;
+      margin: 0.5rem 0.5rem 3.8rem 0.5rem; }
+      html body #gallery span {
+        background-color: white;
+        margin: 0.5rem;
+        width: 100%;
+        align-items: center;
+        padding: 1rem;
+        box-shadow: 0.2rem 0.2rem 15px black;
+        text-align: center; }
+        html body #gallery span img {
+          width: 100%;
+          box-shadow: 0.2rem 0.2rem 15px black; }
+        html body #gallery span #title {
+          font-family: 'Oswald', sans-serif;
+          font-size: 1.2rem; }
+        html body #gallery span #subtitle {
+          font-family: 'Lato', sans-serif;
+          font-size: 0.8rem; }
+    html body #subInput {
+      color: white;
+      bottom: 0;
+      left: 0;
       width: 100%;
-      align-items: center;
+      position: fixed;
+      display: flex;
+      flex-flow: row wrap;
+      background-color: #3A3A3C;
+      justify-content: center;
       padding: 1rem; }
-      html body #gallery span img {
-        width: 100%; }
+      @media screen and (min-width: 780px) {
+        html body #subInput {
+          background-color: red; } }

@@ -9,14 +9,17 @@
   </head>
   <body>
     
-      <div id ='subInput'>
-        <label for="titleId">r/</label>
-        <input id="userInput" type="text" placeholder="subreddit" onkeydown = "if (event.keyCode == 13)
-          document.getElementById('submit').click()">
-        <button id="submit" onclick="subLoader();">submit</button>
-      </div>
+    <div id='header'></div>
+    <div id='navbar'></div>
 
     <div id='gallery'></div>
+    
+    <div id ='subInput'>
+      <label for="titleId">r/</label>
+      <input id="userInput" type="text" placeholder="subreddit" onkeydown = "if (event.keyCode == 13)
+        document.getElementById('submit').click()">
+      <button id="submit" onclick="subLoader();">submit</button>
+    </div>
 
     <script src="js/app.js" type="text/javascript"></script>
   </body>
