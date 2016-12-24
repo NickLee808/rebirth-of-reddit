@@ -27,6 +27,7 @@ function linkLoader () {
     let comments = arrayOfPosts[i].data.num_comments;
     let upvotes = arrayOfPosts[i].data.score;
     let url = arrayOfPosts[i].data.url;
+    let permalink = arrayOfPosts[i].data.permalink;
     if (formatAuthenticator(url)) {
       let link = document.createElement('span');
       link.setAttribute('id', `link${i}`);
@@ -45,7 +46,7 @@ function linkLoader () {
         pic.setAttribute('src', objParse.data.children[i].data.url.split('&amp;').join('&').split('gifv').join('gif'));
         link.appendChild(pic);
         titleGenerator(link, url, title);
-        subtitleGenerator (link, author, comments, upvotes);
+        subtitleGenerator (link, author, comments, permalink, upvotes);
       }
     }else{
       console.log('unloadable link: ' + arrayOfPosts[i].data.url);
@@ -79,25 +80,30 @@ function titleGenerator (link, url, title) {
   titleLink.setAttribute('href', `${url}`);
   titleLink.innerHTML = title;
   titleP.appendChild(titleLink);
-
-  return link.appendChild(titleP);
+  link.appendChild(titleP);
 }
 
-function subtitleGenerator (link, author, comments, upvotes) {
+function subtitleGenerator (link, author, comments, permalink, upvotes) {
   let subtitle = document.createElement('p');
   subtitle.setAttribute('id', 'subtitle');
   subtitle.innerHTML= 'by ';
+  //subtitle.appendChild(document.createElement('p'));
   
   let authorURL = 'https://www.reddit.com/user/' + `${author}`;
-  let authorLink = document.createElement('a');
-  authorLink.setAttribute('href', `${authorURL}`);
-  authorLink.innerHTML = `${author}`;
-  subtitle.appendChild(authorLink);
-  subtitle.appendChild(document.createElement('p'));
-  subtitle.innerHTML = `by ${authorLink.outerHTML} &nbsp; • &nbsp; ${upvotes} upvotes &nbsp; • &nbsp; ${comments} comments`;
+  let authorHTML = document.createElement('a');
+  authorHTML.setAttribute('href', `${authorURL}`);
+  authorHTML.innerHTML = `${author}`;
+  subtitle.appendChild(authorHTML);
+
+  let permalinkURL = 'https://www.reddit.com' + `${permalink}`;
+  let permalinkHTML = document.createElement('a');
+  permalinkHTML.setAttribute('href', `${permalinkURL}`);
+  permalinkHTML.innerHTML = 'comments';
+  subtitle.appendChild(permalinkHTML);
+
+  subtitle.innerHTML = `by ${authorHTML.outerHTML} &nbsp; • &nbsp; ${upvotes} upvotes &nbsp; • &nbsp; ${comments}` + ` ${permalinkHTML.outerHTML}`;
   link.appendChild(subtitle);
 }
 
-
-
-// https://www.reddit.com/r/gifs/?after=t3_
+// ENDLESS SCROLL URL CHEAT CODE:
+// https://www.reddit.com/r/gifs/?after=t3_[DATA.ID]
