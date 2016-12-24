@@ -8,7 +8,7 @@ function subLoader () {
 
   let subreddit = subName.value;
   if (subreddit === 'random'){
-    alert('Fuck you, I don\'t know how to do that shit yet');
+    alert('Don\'t break my shit, motherfucker');
   }
 
   var oReq = new XMLHttpRequest();
@@ -29,6 +29,7 @@ function linkGenerator () {
     let url = arrayOfPosts[i].data.url;
     let permalink = arrayOfPosts[i].data.permalink;
     let nsfw = arrayOfPosts[i].data.over_18;
+    let postId = arrayOfPosts[i].data.id; 
     if (formatAuthenticator(url)) {
       let link = document.createElement('span');
       link.setAttribute('id', `link${i}`);
@@ -118,5 +119,13 @@ function subtitleGenerator (link, author, comments, permalink, upvotes) {
   link.appendChild(subtitle);
 }
 
+document.addEventListener('scroll', function endless () {
+    if (document.body.scrollHeight === 
+        document.body.scrollTop +        
+        window.innerHeight) {
+        alert("Activating endless scroll...");
+    }
+});
+
 // ENDLESS SCROLL URL CHEAT CODE:
-// https://www.reddit.com/r/gifs/?after=t3_[DATA.ID]
+// https://www.reddit.com/r/[SUBREDDIT]/?after=t3_[DATA.ID]
