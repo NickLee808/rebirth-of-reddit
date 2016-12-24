@@ -12,13 +12,13 @@ function subLoader () {
   }
 
   var oReq = new XMLHttpRequest();
-  oReq.addEventListener('load', linkLoader);
+  oReq.addEventListener('load', linkGenerator);
   oReq.open('GET', `https://www.reddit.com/r/${subreddit}.json`);
   oReq.send();
 
 }
 
-function linkLoader () {
+function linkGenerator () {
   let objParse = JSON.parse(this.responseText);
   let arrayOfPosts = objParse.data.children;
   for (let i = 0; i < arrayOfPosts.length; i++) {
@@ -42,9 +42,17 @@ function linkLoader () {
         titleGenerator(link, url, title);
         subtitleGenerator (link, author, comments, upvotes);
       }else{
+        let picLink = document.createElement('a');
+        picLink.setAttribute('href', objParse.data.children[i].data.url);
+
         let pic = document.createElement('img');
         pic.setAttribute('src', objParse.data.children[i].data.url.split('&amp;').join('&').split('gifv').join('gif'));
-        link.appendChild(pic);
+
+        picLink.innerHTML = `${pic.outerHTML}`;
+
+
+
+        link.appendChild(picLink);
         titleGenerator(link, url, title);
         subtitleGenerator (link, author, comments, permalink, upvotes);
       }
@@ -74,7 +82,7 @@ function formatAuthenticator (url) {
 
 function titleGenerator (link, url, title) {
   let titleP = document.createElement('p');
-  titleP.setAttribute('id', 'title');
+  titleP.setAttribute('id', 'linkTitle');
 
   let titleLink = document.createElement('a');
   titleLink.setAttribute('href', `${url}`);
@@ -85,9 +93,7 @@ function titleGenerator (link, url, title) {
 
 function subtitleGenerator (link, author, comments, permalink, upvotes) {
   let subtitle = document.createElement('p');
-  subtitle.setAttribute('id', 'subtitle');
-  subtitle.innerHTML= 'by ';
-  //subtitle.appendChild(document.createElement('p'));
+  subtitle.setAttribute('id', 'linkSubtitle');
   
   let authorURL = 'https://www.reddit.com/user/' + `${author}`;
   let authorHTML = document.createElement('a');

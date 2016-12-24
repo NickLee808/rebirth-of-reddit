@@ -10,11 +10,15 @@
   <body>
     
     <div id='header'></div>
-    <div id='navbar'></div>
+    <div id='navbar'>
+      <span id='Boards'>My Boards</span>
+      <span id='Random'>Random</span>
+      <span id='App'>Get the App</span>
+    </div>
 
     <div id='gallery'></div>
     
-    <div id ='subInput'>
+    <div id='subInput'>
       <label for="titleId">r/</label>
       <input id="userInput" type="text" placeholder="subreddit" onkeydown = "if (event.keyCode == 13)
         document.getElementById('submit').click()">

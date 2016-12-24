@@ -34,10 +34,10 @@ html {
         html body #gallery span img {
           width: 100%;
           box-shadow: 0.2rem 0.2rem 15px black; }
-        html body #gallery span #title {
+        html body #gallery span #linkTitle {
           font-family: 'Oswald', sans-serif;
           font-size: 1.2rem; }
-        html body #gallery span #subtitle {
+        html body #gallery span #linkSubtitle {
           font-family: 'Lato', sans-serif;
           font-size: 0.8rem; }
     html body #subInput {
