@@ -28,6 +28,7 @@ function linkGenerator () {
     let upvotes = arrayOfPosts[i].data.score;
     let url = arrayOfPosts[i].data.url;
     let permalink = arrayOfPosts[i].data.permalink;
+    let nsfw = arrayOfPosts[i].data.over_18;
     if (formatAuthenticator(url)) {
       let link = document.createElement('span');
       link.setAttribute('id', `link${i}`);
@@ -42,14 +43,25 @@ function linkGenerator () {
         titleGenerator(link, url, title);
         subtitleGenerator (link, author, comments, upvotes);
       }else{
-        let picLink = document.createElement('a');
-        picLink.setAttribute('href', objParse.data.children[i].data.url);
-        let pic = document.createElement('img');
-        pic.setAttribute('src', objParse.data.children[i].data.url.split('&amp;').join('&').split('gifv').join('gif'));
-        picLink.innerHTML = `${pic.outerHTML}`;
-        link.appendChild(picLink);
-        titleGenerator(link, url, title);
-        subtitleGenerator (link, author, comments, permalink, upvotes);
+        if (nsfw === false) {
+          let picLink = document.createElement('a');
+          picLink.setAttribute('href', objParse.data.children[i].data.url);
+          let pic = document.createElement('img');
+          pic.setAttribute('src', objParse.data.children[i].data.url.split('&amp;').join('&').split('gifv').join('gif'));
+          picLink.innerHTML = `${pic.outerHTML}`;
+          link.appendChild(picLink);
+          titleGenerator(link, url, title);
+          subtitleGenerator (link, author, comments, permalink, upvotes);
+        }else{
+          let picLink = document.createElement('a');
+          picLink.setAttribute('href', 'http://i107.photobucket.com/albums/m282/strumminblues/censored-2.jpg');
+          let pic = document.createElement('img');
+          pic.setAttribute('src', 'http://i107.photobucket.com/albums/m282/strumminblues/censored-2.jpg');
+          console.log('pic: ' + pic);
+          picLink.innerHTML = pic;
+          console.log ('picLink: ' + picLink);
+          link.appendChild(pic);
+        }    
       }
     }else{
       console.log('unloadable link: ' + arrayOfPosts[i].data.url);
