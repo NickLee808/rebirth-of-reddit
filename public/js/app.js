@@ -44,14 +44,9 @@ function linkGenerator () {
       }else{
         let picLink = document.createElement('a');
         picLink.setAttribute('href', objParse.data.children[i].data.url);
-
         let pic = document.createElement('img');
         pic.setAttribute('src', objParse.data.children[i].data.url.split('&amp;').join('&').split('gifv').join('gif'));
-
         picLink.innerHTML = `${pic.outerHTML}`;
-
-
-
         link.appendChild(picLink);
         titleGenerator(link, url, title);
         subtitleGenerator (link, author, comments, permalink, upvotes);

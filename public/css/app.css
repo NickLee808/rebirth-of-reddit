@@ -1,9 +1,6 @@
 html {
   background-image: url(/assets/bg.jpg);
   background-size: cover; }
-  html a {
-    color: black;
-    text-decoration: none; }
   html a:hover {
     text-decoration: underline; }
   html body {
@@ -15,10 +12,31 @@ html {
       background-position: center;
       display: flex;
       flex-flow: row wrap; }
+      @media screen and (min-width: 780px) {
+        html body #header {
+          background-color: red; } }
     html body #navbar {
       background-color: #3A3A3C;
+      color: gray;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
       height: 2.5rem;
+      text-align: center;
       box-shadow: 0.2rem 0.2rem 15px black; }
+      html body #navbar a {
+        color: gray;
+        text-decoration: none; }
+      html body #navbar a:hover {
+        text-decoration: underline; }
+
+@display screen and (min-width: 780px) {
+  html body #navbar #divider {
+    display: none; } }
+      html body #navbar #bullet {
+        display: none; }
+        @media screen and (min-width: 780px) {
+          html body #navbar #bullet {
+            display: initial; } }
     html body #gallery {
       display: flex;
       flex-flow: row wrap;
@@ -30,17 +48,31 @@ html {
         align-items: center;
         padding: 1rem;
         box-shadow: 0.2rem 0.2rem 15px black;
-        text-align: center; }
+        text-align: center;
+        border-radius: 2px; }
         html body #gallery span img {
           width: 100%;
-          box-shadow: 0.2rem 0.2rem 15px black; }
+          box-shadow: 0.2rem 0.2rem 15px black;
+          border-radius: 2px; }
         html body #gallery span #linkTitle {
           font-family: 'Oswald', sans-serif;
           font-size: 1.2rem; }
+          html body #gallery span #linkTitle a {
+            color: black;
+            text-decoration: none; }
+          html body #gallery span #linkTitle a:hover {
+            text-decoration: underline; }
         html body #gallery span #linkSubtitle {
           font-family: 'Lato', sans-serif;
-          font-size: 0.8rem; }
+          font-size: 0.8rem;
+          color: gray; }
+          html body #gallery span #linkSubtitle a {
+            color: gray;
+            text-decoration: none; }
+          html body #gallery span #linkSubtitle a:hover {
+            text-decoration: underline; }
     html body #subInput {
+      font-family: 'Lato';
       color: white;
       bottom: 0;
       left: 0;
@@ -54,3 +86,5 @@ html {
       @media screen and (min-width: 780px) {
         html body #subInput {
           background-color: red; } }
+      html body #subInput #submit {
+        font-family: 'Lato'; }

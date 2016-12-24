@@ -11,9 +11,17 @@
     
     <div id='header'></div>
     <div id='navbar'>
-      <span id='Boards'>My Boards</span>
-      <span id='Random'>Random</span>
-      <span id='App'>Get the App</span>
+      <a href='https://www.reddit.com/r/random'>
+      <span id='random'>RANDOM</span>
+      </a>
+      <span id='bullet'>•</span>
+      <span id='divider'>|</span>
+      <span id='boards'>MY BOARDS</span>
+      <span id='divider'>|</span>
+      <span id='bullet'>•</span>
+      <a href='https://play.google.com/store/apps/details?id=free.reddit.news'>
+      <span id='app'>GET THE APP</span>
+      </a>
     </div>
 
     <div id='gallery'></div>
@@ -22,7 +30,7 @@
       <label for="titleId">r/</label>
       <input id="userInput" type="text" placeholder="subreddit" onkeydown = "if (event.keyCode == 13)
         document.getElementById('submit').click()">
-      <button id="submit" onclick="subLoader();">submit</button>
+      <button id="submit" onclick="subLoader();">SUBMIT</button>
     </div>
 
     <script src="js/app.js" type="text/javascript"></script>
