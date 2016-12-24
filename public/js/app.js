@@ -40,8 +40,8 @@ function linkGenerator () {
         vid.setAttribute('width', '100%');
         vid.setAttribute('height', '100%');
         link.appendChild(vid);
-        titleGenerator(link, url, title);
-        subtitleGenerator (link, author, comments, upvotes);
+        //titleGenerator(link, url, title);
+        //subtitleGenerator (link, author, comments, upvotes);
       }else{
         if (nsfw === false) {
           let picLink = document.createElement('a');

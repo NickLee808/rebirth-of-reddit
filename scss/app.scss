@@ -39,9 +39,10 @@ html {
       a:hover {
         text-decoration: underline;
       }
-      
+
       #divider {
-        @display screen and (min-width: 780px){
+        color: white;
+        @media screen and (min-width: 780px){
           display: none;
         }
       }
