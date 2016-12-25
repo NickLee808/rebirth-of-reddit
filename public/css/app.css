@@ -1,12 +1,12 @@
 html {
-  background-image: url(/assets/bg.jpg);
+  background-image: url(assets/bg.jpg);
   background-size: cover; }
   html a:hover {
     text-decoration: underline; }
   html body {
     margin: 0; }
     html body #header {
-      background: url("/assets/logo.svg") no-repeat;
+      background: url("assets/logo.svg") no-repeat;
       background-color: white;
       height: 4rem;
       background-position: center;
